@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-    <title>modifier</title>
+    <title>ajoter vapoteuse</title>
 </head>
 
 <body>
@@ -37,7 +38,7 @@
                             </a>
                             <ul id="deroulant" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li><a id="lis-deroulant" class="dropdown-item" href="ajoutvap.php">Vapoteuse</a></li>
-                                <li><a id="lis-deroulant" class="dropdown-item" href="ajoutliquide.php">E-liquide</a></li>
+                                <li><a id="lis-deroulant" class="dropdown-item" href="#">E-liquide</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -55,22 +56,17 @@
             </div>
         </nav>
     </header>
-
     <?php
     $bdd = new mysqli('localhost', 'root', '', 'vap_store');
-    if (isset($_GET['id'])) {
-        $id = $_GET['id'];
-        $recup = "SELECT*from`vapo` where id=$id";
-        $result = mysqli_query($bdd, $recup);
-        $row = mysqli_fetch_assoc($result);
-        $reference = $row['reference'];
-        $nom_article = $row['nom_article'];
-        $description = str_replace('<br />', '', $row['description']);
-        $prix_achat = $row['prix_achat'];
-        $prix_vente = $row['prix_vente'];
-        $quantite = $row['quantite'];
-
-        if (isset($_POST['modifier'])) {
+    if (isset($_POST['ajouter'])) {
+        if (
+            !empty($_POST['reference']) &&
+            !empty($_POST['nom_article']) &&
+            !empty($_POST['description']) &&
+            !empty($_POST['prix_achat']) &&
+            !empty($_POST['prix_vente']) &&
+            !empty($_POST['quantite'])
+        ) {
             $reference = htmlspecialchars($_POST['reference']);
             $nom_article = htmlspecialchars($_POST['nom_article']);
             $description = nl2br(htmlspecialchars($_POST['description']));
@@ -78,69 +74,30 @@
             $prix_vente = htmlspecialchars($_POST['prix_vente']);
             $quantite = htmlspecialchars($_POST['quantite']);
 
-            $recup = "Update `vapo` set id=$id,reference='$reference', 
-        nom_article='$nom_article', 
-        description='$description',
-        prix_achat='$prix_achat', prix_vente='$prix_vente',
-        quantite='$quantite' where id=$id";
-            $result = mysqli_query($bdd, $recup);
-            if ($result) {
-                echo "modifier";
-                header('location:vap.php');
-            } else {
-                echo "Aucun article trouvé";
-            }
-        }
-    }
-
-    if (isset($_GET['idvapmodifier'])) {
-        $id = $_GET['idvapmodifier'];
-        $recup = "SELECT*from`vapo` where id=$id";
-        $result = mysqli_query($bdd, $recup);
-        $row = mysqli_fetch_assoc($result);
-        $reference = $row['reference'];
-        $nom_article = $row['nom_article'];
-        $description = str_replace('<br />', '', $row['description']);
-        $prix_achat = $row['prix_achat'];
-        $prix_vente = $row['prix_vente'];
-        $quantite = $row['quantite'];
-
-        if (isset($_POST['modifier'])) {
-            $reference = htmlspecialchars($_POST['reference']);
-            $nom_article = htmlspecialchars($_POST['nom_article']);
-            $description = nl2br(htmlspecialchars($_POST['description']));
-            $prix_achat = htmlspecialchars($_POST['prix_achat']);
-            $prix_vente = htmlspecialchars($_POST['prix_vente']);
-            $quantite = htmlspecialchars($_POST['quantite']);
-
-            $recup = "Update `vapo` set id=$id,reference='$reference', 
-        nom_article='$nom_article', 
-        description='$description',
-        prix_achat='$prix_achat', prix_vente='$prix_vente',
-        quantite='$quantite' where id=$id";
-            $result = mysqli_query($bdd, $recup);
-            if ($result) {
-                echo "modifier";
-                header('location:index.php');
-            }
+            $inservap = "insert into `e-liquide` (reference_liquide, nom_article_liquide, description_liquide,prix_achat_liquide, prix_vente_liquide,quantite_liquide)
+            values('$reference', '$nom_article', '$description', '$prix_achat', '$prix_vente', '$quantite')";
+            $result = mysqli_query($bdd, $inservap);
+            echo "produit ajouter";
+        } else {
+            echo "Veuillez compléter tous les champs...";
         }
     }
     ?>
     <div>
         <form method="POST" action="">
-            <label>Référence</label> <br> <input type="text" name="reference" value=<?php echo $reference; ?>>
+            <label>Référence</label> <br> <input type="text" name="reference">
             <br>
-            <label>Nom de l'article</label> <br> <input type="text" name="nom_article" value=<?php echo $nom_article; ?>>
+            <label>Nom de l'article</label> <br> <input type="text" name="nom_article">
             <br>
-            <label>Description de l'article</label> <br> <textarea name="description"> <?php echo $description; ?></textarea>
+            <label>Description de l'article</label> <br> <textarea name="description"></textarea>
             <br>
-            <label>Prix d'achat unitaire</label> <br> <input type="number" name="prix_achat" value=<?php echo $prix_achat; ?>>
+            <label>Prix d'achat unitaire</label> <br> <input type="number" name="prix_achat">
             <br>
-            <label>Prix de vente unitaire</label> <br> <input type="number" name="prix_vente" value=<?php echo $prix_vente; ?>>
+            <label>Prix de vente unitaire</label> <br> <input type="number" name="prix_vente">
             <br>
-            <label>Quantité en stock</label> <br> <input type="number" name="quantite" value=<?php echo $quantite; ?>>
+            <label>Quantité en stock</label> <br> <input type="number" name="quantite">
             <br>
-            <input type="submit" name="modifier" value="Modifier">
+            <input type="submit" name="ajouter">
         </form>
     </div>
 </body>

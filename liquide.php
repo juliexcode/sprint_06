@@ -27,8 +27,8 @@
                                 PRODUITS
                             </a>
                             <ul id="deroulant" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a id="lis-deroulant" class="dropdown-item text-white" href="produit.php">Tout</a></li>
-                                <li><a id="lis-deroulant" class="dropdown-item text-white" href="#">Vapoteuse</a></li>
+                                <li><a id="lis-deroulant" class="dropdown-item text-white" href="index.php">Tout</a></li>
+                                <li><a id="lis-deroulant" class="dropdown-item text-white" href="vap.php">Vapoteuse</a></li>
                                 <li><a id="lis-deroulant" class="dropdown-item text-white" href="#">E-liquide</a></li>
                             </ul>
                         </li>
@@ -38,7 +38,7 @@
                             </a>
                             <ul id="deroulant" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <li><a id="lis-deroulant" class="dropdown-item text-white" href="ajoutvap.php">Vapoteuse</a></li>
-                                <li><a id="lis-deroulant" class="dropdown-item text-white" href="#">E-liquide</a></li>
+                                <li><a id="lis-deroulant" class="dropdown-item text-white" href="ajoutliquide.php">E-liquide</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -63,7 +63,7 @@
     <?php
     $bdd = new PDO('mysql:host=localhost;dbname=vap_store', 'root', '');
 
-    $recupvap = $bdd->query('SELECT*FROM vapo');
+    $recupliquide = $bdd->query('SELECT * FROM `e-liquide`');
 
 
     ?>
@@ -79,19 +79,19 @@
                 <th> mise à jour</th>
             </tr>
         </thead>
-        <?php while ($vapoteuse = $recupvap->fetch()) { ?>
+        <?php while ($liquide = $recupliquide->fetch()) { ?>
 
             <tr>
-                <th><?= $vapoteuse['reference']; ?></th>
-                <td><?= $vapoteuse['nom_article']; ?></td>
-                <td><?= $vapoteuse['description']; ?></td>
-                <td><?= $vapoteuse['prix_achat']; ?></td>
-                <td><?= $vapoteuse['prix_vente']; ?></td>
-                <td><?= $vapoteuse['quantite']; ?></td>
-                <td><a href="supprimer.php?id=<?= $vapoteuse['id']; ?>">
+                <th><?= $liquide['reference_liquide']; ?></th>
+                <td><?= $liquide['nom_article_liquide']; ?></td>
+                <td><?= $liquide['description_liquide']; ?></td>
+                <td><?= $liquide['prix_achat_liquide']; ?></td>
+                <td><?= $liquide['prix_vente_liquide']; ?></td>
+                <td><?= $liquide['quantite_liquide']; ?></td>
+                <td><a href="supprimerliquide.php?idsupprimer=<?= $liquide['id-liquide']; ?>">
                         <button>supprimer</button>
                     </a>
-                    <a href="modifier.php?id=<?= $vapoteuse['id']; ?>">
+                    <a href="modifierliquide.php?idmodifier=<?= $liquide['id-liquide']; ?>">
                         <button id="modifier">modifier</button> </a>
                 </td>
             </tr>

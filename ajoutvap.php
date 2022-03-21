@@ -27,9 +27,9 @@
                                 Produits
                             </a>
                             <ul id="deroulant" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a id="lis-deroulant" class="dropdown-item" href="produit.php">tout</a></li>
-                                <li><a id="lis-deroulant" class="dropdown-item" href="#">Vapoteuse</a></li>
-                                <li><a id="lis-deroulant" class="dropdown-item" href="#">E-liquide</a></li>
+                                <li><a id="lis-deroulant" class="dropdown-item" href="index.php">tout</a></li>
+                                <li><a id="lis-deroulant" class="dropdown-item" href="vap.php">Vapoteuse</a></li>
+                                <li><a id="lis-deroulant" class="dropdown-item" href="liquide.php">E-liquide</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -37,8 +37,8 @@
                                 Ajouter des produits
                             </a>
                             <ul id="deroulant" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a id="lis-deroulant" class="dropdown-item" href="ajoutvap.php">Vapoteuse</a></li>
-                                <li><a id="lis-deroulant" class="dropdown-item" href="#">E-liquide</a></li>
+                                <li><a id="lis-deroulant" class="dropdown-item" href="#">Vapoteuse</a></li>
+                                <li><a id="lis-deroulant" class="dropdown-item" href="ajoutliquide.php">E-liquide</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
