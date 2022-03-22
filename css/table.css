@@ -1,0 +1,46 @@
+nav {
+  background-color: rgba(51, 71, 86, 1);
+}
+
+.navbar-nav {
+  margin-left: 20px;
+  padding-left: 20px;
+}
+#search {
+  color: white;
+  border: 1px solid rgba(103, 137, 131, 1);
+}
+#search:hover {
+  background-color: rgba(103, 137, 131, 1);
+}
+#deroulant {
+  background-color: rgba(51, 71, 86, 0.5);
+}
+
+#lis-deroulant:hover {
+  font-size: 18px;
+  background-color: rgba(52, 59, 85, 0.8);
+  color: rgba(230, 221, 196, 1);
+}
+
+.btn {
+  text-decoration: none;
+}
+
+.modifier {
+  background-color: rgba(103, 137, 131, 1);
+  border: 1px solid rgb(134, 126, 102);
+}
+
+.modifier:hover {
+  background-color: rgba(230, 221, 196, 1);
+  border: 1px solid rgb(134, 126, 102);
+}
+
+.delete {
+  background-color: rgba(230, 221, 196, 1);
+  border: 1px solid rgba(103, 137, 131, 1);
+}
+.delete:hover {
+  background-color: rgba(103, 137, 131, 1);
+}
