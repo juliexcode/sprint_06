@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/ajout.css" ?t=<? echo time(); ?> <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/ajout.css?t=<? echo time(); ?>">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
     <title>ajoter vapoteuse</title>
@@ -80,21 +81,22 @@
         }
     }
     ?>
-    <div>
-        <form method="POST" action="">
-            <label>Référence</label> <br> <input type="text" name="reference">
+    <h1>AJOUTER UN E-LIQUIDE</h1>
+    <div id="forform">
+        <form id="formulaire" class="container-lg" method="POST" action="">
+            <label class="form-label">Référence:</label> <br> <input id="champs" class="form-control" type="text" name="reference" placeholder="Entrer la référence du produit" required>
             <br>
-            <label>Nom de l'article</label> <br> <input type="text" name="nom_article">
+            <label class="form-label">Nom de l'article:</label> <br> <input id="champs" class="form-control" type="text" name="nom_article" placeholder="Entrer le nom du produit" required>
             <br>
-            <label>Description de l'article</label> <br> <textarea name="description"></textarea>
+            <label class="form-label">Description de l'article:</label> <br> <textarea id="champs" class="form-control" name="description" placeholder="Entrer la description du produit" required></textarea>
             <br>
-            <label>Prix d'achat unitaire</label> <br> <input type="number" name="prix_achat">
+            <label class="form-label">Prix d'achat unitaire:</label> <br> <input id="champs" class="form-control" type="number" name="prix_achat" placeholder="Entrer le prix d'achat du produit en €" required>
             <br>
-            <label>Prix de vente unitaire</label> <br> <input type="number" name="prix_vente">
+            <label class="form-label">Prix de vente unitaire:</label> <br> <input id="champs" class="form-control" type="number" name="prix_vente" placeholder="Entrer le prix de vente du produit en €" required>
             <br>
-            <label>Quantité en stock</label> <br> <input type="number" name="quantite">
+            <label class="form-label">Quantité en stock:</label> <br> <input id="champs" class="form-control" type="number" name="quantite" placeholder="Entrer le nombre de stock" required>
             <br>
-            <input type="submit" name="ajouter">
+            <input id="btn_ajout" type="submit" name="ajouter">
         </form>
     </div>
 </body>
