@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-    <title>ajoter vapoteuse</title>
+    <title>AJOUTER VAPOTEUSE</title>
 </head>
 
 <body>
@@ -75,7 +75,11 @@
             $inservap = "insert into `e-liquide` (reference_liquide, nom_article_liquide, description_liquide,prix_achat_liquide, prix_vente_liquide,quantite_liquide)
             values('$reference', '$nom_article', '$description', '$prix_achat', '$prix_vente', '$quantite')";
             $result = mysqli_query($bdd, $inservap);
-            echo "produit ajouter";
+    ?>
+            <div class="container-lg">
+                <p id="new" class="container-lg">Nouvelle <a id="lien" href="liquide.php">e-liquide</a> ajouter au stock</p>
+            </div>
+    <?php
         } else {
             echo "Veuillez compléter tous les champs...";
         }
@@ -84,17 +88,17 @@
     <h1>AJOUTER UN E-LIQUIDE</h1>
     <div id="forform">
         <form id="formulaire" class="container-lg" method="POST" action="">
-            <label class="form-label">Référence:</label> <br> <input id="champs" class="form-control" type="text" name="reference" placeholder="Entrer la référence du produit" required>
+            <label class="form-label">Référence:</label> <br> <input id="champs" class="form-control" type="text" name="reference" placeholder="Entrer la référence du produit" required autocomplete="off">
             <br>
-            <label class="form-label">Nom de l'article:</label> <br> <input id="champs" class="form-control" type="text" name="nom_article" placeholder="Entrer le nom du produit" required>
+            <label class="form-label">Nom de l'article:</label> <br> <input id="champs" class="form-control" type="text" name="nom_article" placeholder="Entrer le nom du produit" required autocomplete="off">
             <br>
             <label class="form-label">Description de l'article:</label> <br> <textarea id="champs" class="form-control" name="description" placeholder="Entrer la description du produit" required></textarea>
             <br>
-            <label class="form-label">Prix d'achat unitaire:</label> <br> <input id="champs" class="form-control" type="number" name="prix_achat" placeholder="Entrer le prix d'achat du produit en €" required>
+            <label class="form-label">Prix d'achat unitaire:</label> <br> <input id="champs" class="form-control" type="number" name="prix_achat" placeholder="Entrer le prix d'achat du produit en €" required autocomplete="off">
             <br>
-            <label class="form-label">Prix de vente unitaire:</label> <br> <input id="champs" class="form-control" type="number" name="prix_vente" placeholder="Entrer le prix de vente du produit en €" required>
+            <label class="form-label">Prix de vente unitaire:</label> <br> <input id="champs" class="form-control" type="number" name="prix_vente" placeholder="Entrer le prix de vente du produit en €" required autocomplete="off">
             <br>
-            <label class="form-label">Quantité en stock:</label> <br> <input id="champs" class="form-control" type="number" name="quantite" placeholder="Entrer le nombre de stock" required>
+            <label class="form-label">Quantité en stock:</label> <br> <input id="champs" class="form-control" type="number" name="quantite" placeholder="Entrer le nombre de stock" required autocomplete="off">
             <br>
             <input id="btn_ajout" type="submit" name="ajouter">
         </form>

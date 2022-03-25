@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/ajout.css" ?t=<? echo time(); ?> <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/ajout.css?t=<? echo time(); ?>">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
     <title>modifier</title>
@@ -122,21 +123,22 @@
     }
 
     ?>
-    <div>
-        <form method="POST" action="">
-            <label>Référence</label> <br> <input type="text" name="reference_liquide" value=<?php echo $reference; ?>>
+    <h1>Modifier <?php echo $reference; ?> </h1>
+    <div id="forform">
+        <form id="formulaire" class="container-lg" method="POST" action="">
+            <label>Référence:</label> <br> <input id="champs" class="form-control" type="text" name="reference_liquide" value=<?php echo $reference; ?> required autocomplete="off">
             <br>
-            <label>Nom de l'article</label> <br> <input type="text" name="nom_article_liquide" value=<?php echo $nom_article; ?>>
+            <label>Nom de l'article:</label> <br> <input id="champs" class="form-control" type="text" name="nom_article_liquide" value=<?php echo $nom_article; ?> required autocomplete="off">
             <br>
-            <label>Description de l'article</label> <br> <textarea name="description_liquide"> <?php echo $description; ?></textarea>
+            <label>Description de l'article:</label> <br> <textarea id="champs" class="form-control" name="description_liquide" required autocomplete="off"> <?php echo $description; ?></textarea>
             <br>
-            <label>Prix d'achat unitaire</label> <br> <input type="number" name="prix_achat_liquide" value=<?php echo $prix_achat; ?>>
+            <label>Prix d'achat unitaire:</label> <br> <input id="champs" class="form-control" type="number" name="prix_achat_liquide" value=<?php echo $prix_achat; ?> required autocomplete="off">
             <br>
-            <label>Prix de vente unitaire</label> <br> <input type="number" name="prix_vente_liquide" value=<?php echo $prix_vente; ?>>
+            <label>Prix de vente unitaire:</label> <br> <input id="champs" class="form-control" type="number" name="prix_vente_liquide" value=<?php echo $prix_vente; ?> required autocomplete="off">
             <br>
-            <label>Quantité en stock</label> <br> <input type="number" name="quantite_liquide" value=<?php echo $quantite; ?>>
+            <label>Quantité en stock:</label> <br> <input id="champs" class="form-control" type="number" name="quantite_liquide" value=<?php echo $quantite; ?> required autocomplete="off">
             <br>
-            <input type="submit" name="modifier" value="Modifier">
+            <input id="btn_ajout" type="submit" name="modifier" value="Modifier">
         </form>
     </div>
 </body>

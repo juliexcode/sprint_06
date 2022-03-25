@@ -77,7 +77,7 @@
             $result = mysqli_query($bdd, $inservap);
     ?>
             <div class="container-lg">
-                <p id="new">Nouvelle <a href="vap.php">vapoteuse</a> ajouter au stock</p>
+                <p id="new" class="container-lg">Nouvelle <a id="lien" href="vap.php">vapoteuse</a> ajouter au stock</p>
             </div>
     <?php
         } else {
@@ -86,22 +86,21 @@
     }
     ?>
 
-    <p id="new" class="container-lg">Nouvelle <a id="lien" href="vap.php">vapoteuse</a> ajouter au stock</p>
 
     <h1>AJOUTER UNE VAPOTEUSE</h1>
     <div id="forform">
         <form id="formulaire" class="container-lg" method="POST" action="">
-            <label class="form-label">Référence:</label> <br> <input id="champs" class="form-control" type="text" name="reference" placeholder="Entrer la référence du produit" required>
+            <label class="form-label">Référence:</label> <br> <input id="champs" class="form-control" type="text" name="reference" placeholder="Entrer la référence du produit" required autocomplete="off">
             <br>
-            <label class="form-label">Nom de l'article:</label> <br> <input id="champs" class="form-control" type="text" name="nom_article" placeholder="Entrer le nom du produit" required>
+            <label class="form-label">Nom de l'article:</label> <br> <input id="champs" class="form-control" type="text" name="nom_article" placeholder="Entrer le nom du produit" required autocomplete="off">
             <br>
             <label class="form-label">Description de l'article:</label> <br> <textarea id="champs" class="form-control" name="description" placeholder="Entrer la description du produit" required></textarea>
             <br>
-            <label class="form-label">Prix d'achat unitaire:</label> <br> <input id="champs" class="form-control" type="number" name="prix_achat" placeholder="Entrer le prix d'achat du produit en €" required>
+            <label class="form-label">Prix d'achat unitaire:</label> <br> <input id="champs" class="form-control" type="number" name="prix_achat" placeholder="Entrer le prix d'achat du produit en €" required autocomplete="off">
             <br>
-            <label class="form-label">Prix de vente unitaire:</label> <br> <input id="champs" class="form-control" type="number" name="prix_vente" placeholder="Entrer le prix de vente du produit en €" required>
+            <label class="form-label">Prix de vente unitaire:</label> <br> <input id="champs" class="form-control" type="number" name="prix_vente" placeholder="Entrer le prix de vente du produit en €" required autocomplete="off">
             <br>
-            <label class="form-label">Quantité en stock:</label> <br> <input id="champs" class="form-control" type="number" name="quantite" placeholder="Entrer le nombre de stock" required>
+            <label class="form-label">Quantité en stock:</label> <br> <input id="champs" class="form-control" type="number" name="quantite" placeholder="Entrer le nombre de stock" required autocomplete="off">
             <br>
             <input id="btn_ajout" type="submit" name="ajouter">
         </form>
