@@ -16,6 +16,10 @@ nav {
   color: rgba(230, 221, 196, 1);
 }
 
+#mot {
+  width: 250px;
+}
+
 .btn {
   text-decoration: none;
 }
