@@ -2,21 +2,23 @@
 <html lang="en">
 
 <head>
+    <link rel="icon" type="image/x-icon" href="image">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/contact.css" ?t=<? echo time(); ?> <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/contact.css?t=<? echo time(); ?>">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 
-    <title>NOUS CONTACTEZ</title>
+    <title>NOUS CONTACTER</title>
 </head>
 
 <body>
     <header>
         <nav class="navbar navbar-expand-md navbar-dark">
             <div class="container-fluid">
-                <a class="navbar-brand " href="index.php">LOGO</a>
+                <a class="navbar-brand " href="index.php"><img src="logo"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -51,8 +53,12 @@
         </nav>
 
     </header>
-    <section>
-        <div>
+    <div>
+        <h1>Contactez-nous</h1>
+
+    </div>
+    <div class="row">
+        <div class="col">
             <form class="container-lg">
 
                 <label class="form-label">Adresse email</label>
@@ -65,10 +71,11 @@
                 <input type="submit" name="envoyer" id="btn_envoyer" />
             </form>
         </div>
-    </section>
-    <section>
-        <p>Vous pouvez nous contactez aussi par:</p>
-    </section>
+
+        <div class="col">
+            <p>Vous pouvez nous contactez aussi par:</p>
+        </div>
+    </div>
 </body>
 
 </html>
