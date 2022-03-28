@@ -1,0 +1,17 @@
+nav {
+  background-color: rgba(51, 71, 86, 0.9);
+}
+
+.navbar-nav {
+  margin-left: 20px;
+  padding-left: 20px;
+}
+#deroulant {
+  background-color: rgba(51, 71, 86, 0.5);
+}
+
+#lis-deroulant:hover {
+  font-size: 18px;
+  background-color: rgba(52, 59, 85, 0.8);
+  color: rgba(230, 221, 196, 1);
+}

@@ -41,12 +41,6 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="stock.php">STOCK</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="#">MEMBRES</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link text-white" href="#">CONTACT</a>
                         </li>
 

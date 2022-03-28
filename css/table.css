@@ -20,6 +20,18 @@ nav {
   width: 250px;
 }
 
+#btn_recherche {
+  border: 1px solid rgba(103, 137, 131, 1);
+}
+
+#btn_recherche:hover {
+  background-color: rgba(103, 137, 131, 1);
+}
+
+#btn_recherche:active {
+  background-color: rgb(69, 131, 119);
+}
+
 .btn {
   text-decoration: none;
 }
