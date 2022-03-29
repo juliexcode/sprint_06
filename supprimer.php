@@ -1,5 +1,5 @@
 <?php
-$bdd = new mysqli('localhost', 'root', '', 'vap_store');
+include('connectpmyqsly.php');
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $recup = "delete from `vapo` where id=$id";

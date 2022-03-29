@@ -53,7 +53,7 @@
 
     </header>
     <?php
-    $bdd = new mysqli('localhost', 'root', '', 'vap_store');
+    include('connectpmyqsly.php');
     if (isset($_POST['ajouter'])) {
         if (
             !empty($_POST['reference']) &&

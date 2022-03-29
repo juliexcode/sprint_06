@@ -56,7 +56,7 @@
 
 
     <?php
-    $bdd = new PDO('mysql:host=localhost;dbname=vap_store', 'root', '');
+    include('connectpdo.php');
 
     $recupvap = $bdd->query('SELECT*FROM vapo');
 

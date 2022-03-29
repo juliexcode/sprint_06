@@ -53,7 +53,7 @@
 
     </header>
     <?php
-    $bdd = new mysqli('localhost', 'root', '', 'vap_store');
+    include('connectpmyqsly.php');
     if (isset($_GET['idmodifier'])) {
         $id = $_GET['idmodifier'];
         $recup = "SELECT*from`e-liquide` where `id-liquide`=$id";
