@@ -1,3 +1,0 @@
-SetEnv ENVIRONMENT_TYPE "development"
-SetEnv DB_USER "sc1lgvu9627"
-SetEnv DB_PASSWORD "AFCPE-DWWM#2021-RUN"
