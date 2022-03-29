@@ -43,7 +43,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">CONTACT</a>
+                            <a class="nav-link text-white" href="contact.php">CONTACT</a>
                         </li>
 
                     </ul>

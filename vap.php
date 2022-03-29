@@ -6,7 +6,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/table.css" ?t=<? echo time(); ?> <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/table.css?t=<? echo time(); ?>">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
     <title>LES VAPOTEUSES</title>
@@ -84,12 +85,12 @@
                 <td class="text-center"><?= $vapoteuse['prix_achat']; ?></td>
                 <td class="text-center"><?= $vapoteuse['prix_vente']; ?></td>
                 <td class="text-center"><?= $vapoteuse['quantite']; ?></td>
-                <td class="text-center"><a class="btn" href="supprimer.php?idtout=<?= $vapoteuse['id']; ?>">
+                <td class="text-center"><a class="btn" href="supprimer.php?id=<?= $vapoteuse['id']; ?>">
                         <button class="delete">
                             &#128465;&#65039;
                         </button>
                     </a>
-                    <a class="btn" href="modifier.php?idvapmodifier=<?= $vapoteuse['id']; ?>">
+                    <a class="btn" href="modifier.php?id=<?= $vapoteuse['id']; ?>">
                         <button class="modifier">&#9999;&#65039;</button> </a>
                 </td>
             </tr>
