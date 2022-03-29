@@ -1,5 +1,5 @@
 <?php
-include('connectpmyqsly.php');
+$bdd = new mysqli('109.234.164.161', 'sc1lgvu9627', 'AFCPE-DWWM#2021-RUN', 'sc1lgvu9627_perianmodely-julie.sprint-06');
 if (isset($_GET['idsupprimer'])) {
     $id = $_GET['idsupprimer'];
     $recup = "delete from `e-liquide` where `id-liquide`=$id";
