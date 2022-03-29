@@ -60,7 +60,7 @@
     </header>
     <h1>Vapoteuse</h1>
     <?php
-    include('connectpdo.php');
+    include 'connectpdo.php';
     $vap = $bdd->query('SELECT*FROM vapo ORDER BY id DESC');
     if (isset($_GET['envoyer'])) {
         if (isset($_GET['s']) && !empty($_GET['s'])) {
