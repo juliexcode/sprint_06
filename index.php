@@ -62,96 +62,97 @@
     <?php
     if (strcmp($_SERVER['ENVIRONMENT_TYPE'], "production") == 0) {
         $bdd = new PDO('mysql:host=109.234.164.161;dbname=sc1lgvu9627_perianmodely-julie.sprint-06', $_SERVER['DB_USER'], $_SERVER['DB_PASSWORD']);
-    }
-    $vap = $bdd->query('SELECT*FROM vapo ORDER BY id DESC');
-    if (isset($_GET['envoyer'])) {
-        if (isset($_GET['s']) && !empty($_GET['s'])) {
-            $recherche = htmlspecialchars($_GET['s']);
-            $vap = $bdd->query('SELECT * FROM vapo WHERE reference LIKE "%' . $recherche . '%" ORDER BY id DESC');
-        }
-    }
-    ?>
-    <table class="table table-bordered table-borderless table-hover">
-        <thead>
-            <tr>
-                <th class="text-center"> Référence</th>
-                <th class="text-center"> Nom </th>
-                <th class="text-center"> Description</th>
-                <th class="text-center"> Prix achat</th>
-                <th class="text-center"> Prix vente</th>
-                <th class="text-center"> Quantité en stock</th>
-                <th class="text-center"> Mise à jour</th>
-            </tr>
-        </thead>
-        <?php if ($vap->rowCount() > 0) {
-            while ($vapoteuse = $vap->fetch()) {
-        ?>
-                <tr>
-                    <th class="text-center"><?= $vapoteuse['reference']; ?></th>
-                    <td><?= $vapoteuse['nom_article']; ?></td>
-                    <td><?= $vapoteuse['description']; ?></td>
-                    <td class="text-center"><?= $vapoteuse['prix_achat']; ?></td>
-                    <td class="text-center"><?= $vapoteuse['prix_vente']; ?></td>
-                    <td class="text-center"><?= $vapoteuse['quantite']; ?></td>
-                    <td class="text-center"><a class="btn" href="supprimer.php?idtout=<?= $vapoteuse['id']; ?>">
-                            <button class="delete">
-                                &#128465;&#65039;
-                            </button>
-                        </a>
-                        <a class="btn" href="modifier.php?idvapmodifier=<?= $vapoteuse['id']; ?>">
-                            <button class="modifier">&#9999;&#65039;</button> </a>
-                    </td>
-                </tr>
 
-        <?php
+        $vap = $bdd->query('SELECT*FROM vapo ORDER BY id DESC');
+        if (isset($_GET['envoyer'])) {
+            if (isset($_GET['s']) && !empty($_GET['s'])) {
+                $recherche = htmlspecialchars($_GET['s']);
+                $vap = $bdd->query('SELECT * FROM vapo WHERE reference LIKE "%' . $recherche . '%" ORDER BY id DESC');
             }
         }
-        ?>
-    </table>
-    <h1>E-liquide</h1>
-    <?php
-    $recupliquide = $bdd->query('SELECT*FROM `e-liquide` ORDER BY `id-liquide` DESC');
-    if (isset($_GET['envoyer'])) {
-        if (isset($_GET['s']) && !empty($_GET['s'])) {
-            $recherche = htmlspecialchars($_GET['s']);
-            $recupliquide = $bdd->query('SELECT * FROM `e-liquide` WHERE reference_liquide LIKE "%' . $recherche . '%" ORDER BY `id-liquide` DESC');
-        }
-    }
     ?>
-    <table class="table table-bordered table-borderless table-hover">
-        <thead>
-            <tr>
-                <th class="text-center"> Référence</th>
-                <th class="text-center"> Nom </th>
-                <th class="text-center"> Description</th>
-                <th class="text-center"> Prix achat</th>
-                <th class="text-center"> Prix vente</th>
-                <th class="text-center"> Quantité en stock</th>
-                <th class="text-center"> Mise à jour</th>
-            </tr>
-        </thead>
-        <?php if ($recupliquide->rowCount() > 0) {
-            while ($liquide = $recupliquide->fetch()) {
-        ?>
+        <table class="table table-bordered table-borderless table-hover">
+            <thead>
                 <tr>
-                    <th class="text-center"><?= $liquide['reference_liquide']; ?></th>
-                    <td><?= $liquide['nom_article_liquide']; ?></td>
-                    <td><?= $liquide['description_liquide']; ?></td>
-                    <td class="text-center"><?= $liquide['prix_achat_liquide']; ?></td>
-                    <td class="text-center"><?= $liquide['prix_vente_liquide']; ?></td>
-                    <td class="text-center"><?= $liquide['quantite_liquide']; ?></td>
-                    <td class="text-center"><a class="btn" href="supprimerliquide.php?idsupprimerdanstout=<?= $liquide['id-liquide']; ?>">
-                            <button class="delete">&#128465;&#65039;</button>
-                        </a>
-                        <a class="btn" href="modifierliquide.php?idmodifierliquidedanstout=<?= $liquide['id-liquide']; ?>">
-                            <button class="modifier">&#9999;&#65039;</button> </a>
-                    </td>
+                    <th class="text-center"> Référence</th>
+                    <th class="text-center"> Nom </th>
+                    <th class="text-center"> Description</th>
+                    <th class="text-center"> Prix achat</th>
+                    <th class="text-center"> Prix vente</th>
+                    <th class="text-center"> Quantité en stock</th>
+                    <th class="text-center"> Mise à jour</th>
                 </tr>
+            </thead>
+            <?php if ($vap->rowCount() > 0) {
+                while ($vapoteuse = $vap->fetch()) {
+            ?>
+                    <tr>
+                        <th class="text-center"><?= $vapoteuse['reference']; ?></th>
+                        <td><?= $vapoteuse['nom_article']; ?></td>
+                        <td><?= $vapoteuse['description']; ?></td>
+                        <td class="text-center"><?= $vapoteuse['prix_achat']; ?></td>
+                        <td class="text-center"><?= $vapoteuse['prix_vente']; ?></td>
+                        <td class="text-center"><?= $vapoteuse['quantite']; ?></td>
+                        <td class="text-center"><a class="btn" href="supprimer.php?idtout=<?= $vapoteuse['id']; ?>">
+                                <button class="delete">
+                                    &#128465;&#65039;
+                                </button>
+                            </a>
+                            <a class="btn" href="modifier.php?idvapmodifier=<?= $vapoteuse['id']; ?>">
+                                <button class="modifier">&#9999;&#65039;</button> </a>
+                        </td>
+                    </tr>
+
+            <?php
+                }
+            }
+            ?>
+        </table>
+        <h1>E-liquide</h1>
         <?php
+        $recupliquide = $bdd->query('SELECT*FROM `e-liquide` ORDER BY `id-liquide` DESC');
+        if (isset($_GET['envoyer'])) {
+            if (isset($_GET['s']) && !empty($_GET['s'])) {
+                $recherche = htmlspecialchars($_GET['s']);
+                $recupliquide = $bdd->query('SELECT * FROM `e-liquide` WHERE reference_liquide LIKE "%' . $recherche . '%" ORDER BY `id-liquide` DESC');
             }
         }
         ?>
-    </table>
+        <table class="table table-bordered table-borderless table-hover">
+            <thead>
+                <tr>
+                    <th class="text-center"> Référence</th>
+                    <th class="text-center"> Nom </th>
+                    <th class="text-center"> Description</th>
+                    <th class="text-center"> Prix achat</th>
+                    <th class="text-center"> Prix vente</th>
+                    <th class="text-center"> Quantité en stock</th>
+                    <th class="text-center"> Mise à jour</th>
+                </tr>
+            </thead>
+            <?php if ($recupliquide->rowCount() > 0) {
+                while ($liquide = $recupliquide->fetch()) {
+            ?>
+                    <tr>
+                        <th class="text-center"><?= $liquide['reference_liquide']; ?></th>
+                        <td><?= $liquide['nom_article_liquide']; ?></td>
+                        <td><?= $liquide['description_liquide']; ?></td>
+                        <td class="text-center"><?= $liquide['prix_achat_liquide']; ?></td>
+                        <td class="text-center"><?= $liquide['prix_vente_liquide']; ?></td>
+                        <td class="text-center"><?= $liquide['quantite_liquide']; ?></td>
+                        <td class="text-center"><a class="btn" href="supprimerliquide.php?idsupprimerdanstout=<?= $liquide['id-liquide']; ?>">
+                                <button class="delete">&#128465;&#65039;</button>
+                            </a>
+                            <a class="btn" href="modifierliquide.php?idmodifierliquidedanstout=<?= $liquide['id-liquide']; ?>">
+                                <button class="modifier">&#9999;&#65039;</button> </a>
+                        </td>
+                    </tr>
+        <?php
+                }
+            }
+        }
+        ?>
+        </table>
 
 
 </body>
