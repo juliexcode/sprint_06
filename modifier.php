@@ -53,7 +53,9 @@
 
     </header>
     <?php
-    $bdd = new mysqli('109.234.164.161', 'sc1lgvu9627', 'AFCPE-DWWM#2021-RUN', 'sc1lgvu9627_perianmodely-julie.sprint-06');
+    if (strcmp($_SERVER['ENVIRONMENT_TYPE'], "production") == 0) {
+        $bdd = new mysqli('109.234.164.161', $_SERVER['DB_USER'], $_SERVER['DB_PASSWORD'], 'sc1lgvu9627_perianmodely-julie.sprint-06');
+    }
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
         $recup = "SELECT*from`vapo` where id=$id";

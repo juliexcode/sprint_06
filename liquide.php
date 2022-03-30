@@ -56,7 +56,9 @@
 
 
     <?php
-    $bdd = new PDO('mysql:host=109.234.164.161;dbname=sc1lgvu9627_perianmodely-julie.sprint-06', 'sc1lgvu9627', 'AFCPE-DWWM#2021-RUN');
+    if (strcmp($_SERVER['ENVIRONMENT_TYPE'], "production") == 0) {
+        $bdd = new PDO('mysql:host=109.234.164.161;dbname=sc1lgvu9627_perianmodely-julie.sprint-06', $_SERVER['DB_USER'], $_SERVER['DB_PASSWORD']);
+    }
     $recupliquide = $bdd->query('SELECT * FROM `e-liquide`');
     ?>
     <h1>E-liquide</h1>
@@ -94,6 +96,7 @@
 
         <?php
         }
+
         ?>
     </table>
 </body>
