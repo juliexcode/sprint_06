@@ -2,7 +2,9 @@
 
 ## Visualiser le site:
 
-Le lien pour pouvoir visualiser mon site : **[projet sprint-06 ](http://perianmodely-julie.sprint-06.sc1lgvu9627.universe.wf/)**
+Le lien pour pouvoir visualiser mon site : **[projet sprint-06 ](http://perianmodely-julie.sprint-06.sc1lgvu9627.universe.wf/)**  
+
+présent aussi sur la section about,
 
 qui est héberger sur la plateforme [_O2switch_](https://kip.o2switch.net:2083/).
 
