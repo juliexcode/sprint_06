@@ -2,7 +2,7 @@
 
 ## Vap Factory stock
 
-Le lien pour pouvoir visualiser mon site : **perianmodely-julie.sprint-06.sc1lgvu9627.universe.wf**
+Le lien pour pouvoir visualiser mon site : **http://perianmodely-julie.sprint-06.sc1lgvu9627.universe.wf/**
 qui est héberger sur la plateforme _O2switch_ https://kip.o2switch.net:2083/.
 
 ######SUR LE SITE:
