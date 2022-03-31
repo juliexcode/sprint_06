@@ -7,7 +7,7 @@ qui est héberger sur la plateforme _O2switch_ https://kip.o2switch.net:2083/.
 
 ######SUR LE SITE:
 
-Nous arrivons directement sur la page index.php où sont afficher tout les produits présent dans le stock.
+Nous arrivons directement sur la page *index.php* où sont afficher tout les produits présent dans le stock.
 
 Nous avons un menu qui nous permet de naviguer sur le site pour plus de simplicité.
 
