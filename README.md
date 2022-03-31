@@ -14,6 +14,6 @@ On a le choix de visualiser que les vapoteuses, les e-liquides ou tout les produ
 
 Pour chaque produit nous pouvons soit le supprimer ou le modifier.
 
-Pour ajouter un produit nous devons choisir soit une vapoteuse ou un e-liquide, qu'importe le choix quand ont a entrer tout les informations du produit on appuyer sur le bouton ajouter.
+Pour ajouter un produit nous devons choisir soit une vapoteuse ou un e-liquide, qu'importe le choix, quand on a fini d'entrer tout les informations du produit on appuyer sur le bouton ajouter.
 
 Une page de _contact_ est mis à disposition en cas de problème sur le site.
